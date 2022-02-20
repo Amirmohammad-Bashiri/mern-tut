@@ -68,7 +68,9 @@ const loginUser = asyncHandler(async function (req, res) {
 // @route   GET /api/users/me
 // @access  Private
 const getMe = asyncHandler(async function (req, res) {
-  res.json({ message: "User data" });
+  const { _id, name, email } = await User.findById(req.user.id);
+
+  res.status(200).json({ id: _id, name, email });
 });
 
 module.exports = { loginUser, getMe, registerUser };
