@@ -17,6 +17,7 @@ app.use(morgan("dev"));
 
 // Routes
 app.use("/api/goals", require("./routes/goalRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
 
 // Error handler
 app.use(errorHandler);
