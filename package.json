@@ -2,7 +2,8 @@
   "name": "mern-tutorial-yt",
   "scripts": {
     "start": "node ./backend/server.js",
-    "server": "nodemon ./backend/server.js"
+    "server": "nodemon ./backend/server.js",
+    "client": "npm start --prefix frontend"
   },
   "version": "1.0.0",
   "main": "server.js",
