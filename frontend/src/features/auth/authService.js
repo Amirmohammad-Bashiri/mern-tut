@@ -13,12 +13,25 @@ const register = async userData => {
   return data;
 };
 
+// Login user
+const login = async userData => {
+  const { data } = await axios.post(`${API_URL}/login`, userData);
+
+  if (data) {
+    localStorage.setItem("user", JSON.stringify(data));
+  }
+
+  return data;
+};
+
+// Logout user
 const logout = () => {
   localStorage.removeItem("user");
 };
 
 const authService = {
   register,
+  login,
   logout,
 };
 
